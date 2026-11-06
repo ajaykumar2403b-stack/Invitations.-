@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Garapadu Friends Get-Together</title>
+<style>
+  :root {
+    color-scheme: dark;
+    --gold: #ffd700;
+    --pink: #ff007f;
+    --purple: #7928ca;
+    --cyan: #00dfd8;
+    --text: #ffffff;
+    --card: rgba(0, 0, 0, 0.6);
+    --front-bg: #111111;
+    box-sizing: border-box;
+    padding-top: env(safe-area-inset-top, 0px);
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+  }
+  html { height: 100%; scroll-padding-top: env(safe-area-inset-top, 0px); }
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: var(--text);
+    background: var(--front-bg);
+    min-height: 100%;
+    text-align: center;
+  }
+
+  /* FRONT */
+  #front {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  #front a {
+    font-size: 1.8rem;
+    color: var(--gold);
+    text-decoration: none;
+    border: 2px solid var(--gold);
+    padding: 16px 32px;
+    border-radius: 50px;
+    cursor: pointer;
+  }
+  #front a:active { background: var(--gold); color: #111; }
+
+  /* PARTY */
+  #party {
+    display: none;
+    min-height: 100vh;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background: linear-gradient(135deg, var(--pink), var(--purple), var(--cyan));
+    background-size: 400% 400%;
+    animation: gradientBG 15s ease infinite;
+    position: relative;
+    overflow: hidden;
+  }
+  @keyframes gradientBG {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+  .emoji {
+    position: fixed;
+    top: -50px;
+    font-size: 1.8rem;
+    animation: fall linear infinite;
+    pointer-events: none;
+    z-index: 1;
+  }
+  @keyframes fall { to { transform: translateY(115vh) rotate(360deg); } }
+
+  .invitation-card {
+    position: relative;
+    z-index: 2;
+    background: var(--card);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    padding: 30px;
+    margin: 15px;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    max-width: 90%;
+    width: 500px;
+    box-sizing: border-box;
+  }
+  .circle {
+    font-size: 1.1rem;
+    letter-spacing: 1px;
+    margin: 0 0 6px;
+  }
+  h1 {
+    font-size: 1.8rem;
+    margin: 0 0 15px;
+    text-shadow: 0 0 10px var(--pink), 0 0 20px var(--purple);
+    color: var(--gold);
+  }
+  h2 { font-size: 1.3rem; margin-bottom: 20px; }
+  .details { font-size: 1rem; line-height: 1.6; margin-bottom: 20px; }
+  .map-button {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--pink);
+    color: white;
+    padding: 12px 20px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: bold;
+    box-shadow: 0 4px 15px rgba(255, 0, 127, 0.4);
+    margin-bottom: 20px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  .map-icon { margin-right: 8px; width: 20px; height: 20px; fill: white; }
+  .notes-section {
+    background: rgba(255, 255, 255, 0.1);
+    border-left: 4px solid var(--gold);
+    padding: 10px 15px;
+    text-align: left;
+    border-radius: 0 10px 10px 0;
+    font-size: 0.9rem;
+  }
+  .notes-section h3 { margin-top: 0; margin-bottom: 5px; color: var(--gold); font-size: 1rem; }
+  ul { padding-left: 15px; margin: 0; }
+  li { margin-bottom: 5px; }
+</style>
+</head>
+<body>
+
+<div id="front">
+  <a id="open">Program Invitation</a>
+</div>
+
+<div id="party">
+  <div class="invitation-card">
+    <p class="circle">Garapadu and Friends Circle</p>
+    <h1>Get Together</h1>
+    <p>Heartly welcomes all Garapadu and friends circle</p>
+
+    <div class="details">
+      <p>Get ready for the ultimate reunion!</p>
+      <p><strong>Date:</strong> November 8th</p>
+      <p><strong>Time:</strong> 1:00 PM</p>
+    </div>
+
+    <a href="https://maps.google.com/?q=Ocesia+Farm+House+Jeedipalli+Main+Road" class="map-button">
+      <svg class="map-icon" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+      Venue Location: Ocesia Farm House
+    </a>
+
+    <div class="details">
+      <h2>What We’ve Got Arranged:</h2>
+      <p>✨ Unlimited Alcohol &amp; Non-Veg Food</p>
+      <p>✨ Live Non-Veg Barbecue Setup</p>
+      <p>✨ Swimming Pool &amp; Projector</p>
+      <p>✨ Great Music System</p>
+    </div>
+
+    <div class="notes-section">
+      <h3>📝 Important Notes:</h3>
+      <ul>
+        <li>Please bring your own essentials, including a change of clothes, toothpaste, and brush.</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<script>
+  document.getElementById('open').addEventListener('click', function () {
+    document.getElementById('front').style.display = 'none';
+    var party = document.getElementById('party');
+    party.style.display = 'flex';
+    var icons = ['🎉', '🎊', '🥳', '🎈', '✨', '🎶'];
+    for (var i = 0; i < 22; i++) {
+      var e = document.createElement('div');
+      e.className = 'emoji';
+      e.textContent = icons[Math.floor(Math.random() * icons.length)];
+      e.style.left = Math.random() * 100 + 'vw';
+      e.style.animationDuration = (5 + Math.random() * 6) + 's';
+      e.style.animationDelay = (Math.random() * 5) + 's';
+      party.appendChild(e);
+    }
+  });
+</script>
+</body>
+</html>
